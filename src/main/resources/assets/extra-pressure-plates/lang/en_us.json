@@ -1,0 +1,11 @@
+{
+  "block.extra-pressure-plates.invisible_obsidian_pressure_plate": "Invisible Obsidian Pressure Plate",
+  "block.extra-pressure-plates.obsidian_pressure_plate": "Obsidian Pressure Plate",
+  "block.extra-pressure-plates.invisible_fiery_pressure_plate": "Invisible Fiery Pressure Plate",
+  "block.extra-pressure-plates.fiery_pressure_plate": "Fiery Pressure Plate",
+  "block.extra-pressure-plates.invisible_cactus_pressure_plate": "Invisible Cactus Pressure Plate",
+  "block.extra-pressure-plates.cactus_pressure_plate": "Cactus Pressure Plate",
+  "block.extra-pressure-plates.glass_pressure_plate": "Glass Pressure Plate",
+  "extra-pressure-plates.advancements.story.create_pressure_plate.title": "Stay Away!",
+  "extra-pressure-plates.advancements.story.create_pressure_plate.description": "Craft an obsidian pressure plate to keep mobs out of your home."
+}

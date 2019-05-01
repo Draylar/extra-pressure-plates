@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "extra-pressure-plates:glass_pressure_plate"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "db"
+  ],
+  "key": {
+    "d": {
+      "item": "extra-pressure-plates:obsidian_pressure_plate"
+    },
+    "b": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "extra-pressure-plates:invisible_obsidian_pressure_plate"
+  }
+}

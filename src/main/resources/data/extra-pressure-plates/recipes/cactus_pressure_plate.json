@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:cactus"
+    }
+  },
+  "result": {
+    "item": "extra-pressure-plates:cactus_pressure_plate"
+  }
+}

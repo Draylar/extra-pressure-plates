@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:magma_block"
+    }
+  },
+  "result": {
+    "item": "extra-pressure-plates:fiery_pressure_plate"
+  }
+}

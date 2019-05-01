@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bg"
+  ],
+  "key": {
+    "b": {
+      "item": "extra-pressure-plates:fiery_pressure_plate"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "extra-pressure-plates:invisible_fiery_pressure_plate"
+  }
+}
