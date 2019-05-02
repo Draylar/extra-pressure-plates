@@ -1,0 +1,11 @@
+{
+  "block.extra-pressure-plates.invisible_obsidian_pressure_plate": "隐形黑曜石压力板",
+  "block.extra-pressure-plates.obsidian_pressure_plate": "黑曜石压力板",
+  "block.extra-pressure-plates.invisible_fiery_pressure_plate": "隐形炙热压力板",
+  "block.extra-pressure-plates.fiery_pressure_plate": "炙热压力板",
+  "block.extra-pressure-plates.invisible_cactus_pressure_plate": "隐形仙人掌压力板",
+  "block.extra-pressure-plates.cactus_pressure_plate": "仙人掌压力板",
+  "block.extra-pressure-plates.glass_pressure_plate": "玻璃压力板",
+  "extra-pressure-plates.advancements.story.create_pressure_plate.title": "远离我!",
+  "extra-pressure-plates.advancements.story.create_pressure_plate.description": "制作一个黑曜石压力板让怪物远离你的家."
+}
