@@ -3,9 +3,13 @@ package com.github.draylar.extraPP.common.blocks.cactus;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.VerticalEntityPosition;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class CactusPressurePlate extends PressurePlateBlock
@@ -26,5 +30,11 @@ public class CactusPressurePlate extends PressurePlateBlock
                 entity_1.damage(DamageSource.CACTUS, 4);
             }
         }
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, VerticalEntityPosition verticalEntityPosition_1)
+    {
+        return VoxelShapes.empty();
     }
 }

@@ -3,9 +3,13 @@ package com.github.draylar.extraPP.common.blocks.obsidian;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.VerticalEntityPosition;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.loot.context.LootContext;
 
@@ -29,5 +33,11 @@ public class ObsidianPressurePlate extends PressurePlateBlock
                 this.updatePlateState(world_1, blockPos_1, blockState_1, redstoneOutput);
             }
         }
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, VerticalEntityPosition verticalEntityPosition_1)
+    {
+        return VoxelShapes.empty();
     }
 }
