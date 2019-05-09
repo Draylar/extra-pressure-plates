@@ -4,7 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.VerticalEntityPosition;
-import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
@@ -26,7 +26,7 @@ public class FieryPressurePlate extends PressurePlateBlock
             if (redstoneOutput == 0)
             {
                 this.updatePlateState(world_1, blockPos_1, blockState_1, redstoneOutput);
-                entity_1.setOnFireFor(5);
+                if(entity_1 instanceof HostileEntity) entity_1.setOnFireFor(5);
             }
         }
     }
