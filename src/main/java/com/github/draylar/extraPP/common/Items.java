@@ -10,12 +10,13 @@ public class Items
 {
     private static final BlockItem OBSIDIAN = new BlockItem(Blocks.OBSIDIAN, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
     private static final BlockItem INVISIBLE_OBSIDIAN = new BlockItem(Blocks.INVISIBLE_OBSIDIAN, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
-
     private static final BlockItem CACTUS = new BlockItem(Blocks.CACTUS, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
     private static final BlockItem INVISIBLE_CACTUS = new BlockItem(Blocks.INVISIBLE_CACTUS, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
     private static final BlockItem FIERY = new BlockItem(Blocks.FIERY, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
     private static final BlockItem INVISIBLE_FIERY = new BlockItem(Blocks.INVISIBLE_FIERY, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
     private static final BlockItem GLASS = new BlockItem(Blocks.GLASS, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
+    private static final BlockItem SLIME = new BlockItem(Blocks.SLIME, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
+    private static final BlockItem INVISIBLE_SLIME = new BlockItem(Blocks.INVISIBLE_SLIME, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
 
     public static void register()
     {
@@ -26,6 +27,8 @@ public class Items
         register("fiery_pressure_plate", FIERY);
         register("invisible_fiery_pressure_plate", INVISIBLE_FIERY);
         register("glass_pressure_plate", GLASS);
+        register("slime_pressure_plate", SLIME);
+        register("invisible_slime_pressure_plate", INVISIBLE_SLIME);
     }
 
     private static void register(String name, Item item)
