@@ -1,36 +1,49 @@
 package com.github.draylar.extraPP.common;
 
-import com.github.draylar.extraPP.common.blocks.cactus.CactusPressurePlate;
-import com.github.draylar.extraPP.common.blocks.cactus.InvisibleCactusPressurePlate;
-import com.github.draylar.extraPP.common.blocks.fiery.FieryPressurePlate;
-import com.github.draylar.extraPP.common.blocks.fiery.InvisibleFieryPressurePlate;
-import com.github.draylar.extraPP.common.blocks.glass.GlassPressurePlate;
-import com.github.draylar.extraPP.common.blocks.obsidian.InvisibleObsidianPressurePlate;
-import com.github.draylar.extraPP.common.blocks.obsidian.ObsidianPressurePlate;
-import com.github.draylar.extraPP.common.blocks.slime.InvisibleSlimePressurePlate;
-import com.github.draylar.extraPP.common.blocks.slime.SlimePressurePlate;
+import com.github.draylar.extraPP.common.blocks.CustomInvisiblePressurePlateBlock;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class Blocks
 {
-    static final ObsidianPressurePlate OBSIDIAN = new ObsidianPressurePlate(PressurePlateBlock.Type.STONE, FabricBlockSettings.of(Material.STONE).hardness(1f).build());
-    static final InvisibleObsidianPressurePlate INVISIBLE_OBSIDIAN = new InvisibleObsidianPressurePlate(PressurePlateBlock.Type.STONE, FabricBlockSettings.of(Material.STONE).hardness(1f).build());
+    static final CustomPressurePlateBlock OBSIDIAN = createPressurePlate(PressurePlateBlock.Type.STONE, Material.STONE, 1, null);
+    static final CustomPressurePlateBlock GLASS = createPressurePlate(PressurePlateBlock.Type.WOOD, Material.GLASS, .5f, null);
+    static final CustomPressurePlateBlock SLIME = createPressurePlate(PressurePlateBlock.Type.WOOD, Material.CLAY, .3f, BlockSoundGroup.SLIME, null);
+    static final CustomPressurePlateBlock CACTUS = createPressurePlate(PressurePlateBlock.Type.WOOD, Material.CACTUS, .5f, (state, world, pos, entity) ->
+    {
+        if(entity instanceof HostileEntity) entity.damage(DamageSource.CACTUS, 4);
+    });
 
-    static final CactusPressurePlate CACTUS = new CactusPressurePlate(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.CACTUS).hardness(.5f).build());
-    static final InvisibleCactusPressurePlate INVISIBLE_CACTUS = new InvisibleCactusPressurePlate(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.CACTUS).hardness(.5f).build());
+    static final CustomPressurePlateBlock FIERY = createPressurePlate(PressurePlateBlock.Type.STONE, Material.STONE, 1, (state, world, pos, entity) ->
+    {
+        if(entity instanceof HostileEntity) entity.setOnFireFor(5);
+    });
 
-    static final FieryPressurePlate FIERY = new FieryPressurePlate(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.STONE).hardness(1f).build());
-    static final InvisibleFieryPressurePlate INVISIBLE_FIERY = new InvisibleFieryPressurePlate(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.STONE).hardness(1f).build());
+    static final CustomPressurePlateBlock INVISIBLE_OBSIDIAN = createInvisiblePressurePlate(OBSIDIAN);
+    static final CustomPressurePlateBlock INVISIBLE_CACTUS = createInvisiblePressurePlate(CACTUS);
+    static final CustomPressurePlateBlock INVISIBLE_FIERY = createInvisiblePressurePlate(FIERY);
+    static final CustomPressurePlateBlock INVISIBLE_SLIME = createInvisiblePressurePlate(SLIME);
 
-    static final GlassPressurePlate GLASS = new GlassPressurePlate(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.GLASS).hardness(.5f).build());
+    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.Type type, Material material, float hardness, PressurePlateTask task)
+    {
+        return new CustomPressurePlateBlock(type, FabricBlockSettings.of(material).hardness(hardness).build(), task);
+    }
 
-    static final SlimePressurePlate SLIME = new SlimePressurePlate(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.CLAY).friction(0.8F).sounds(BlockSoundGroup.SLIME).hardness(.3f).build());
-    static final InvisibleSlimePressurePlate INVISIBLE_SLIME = new InvisibleSlimePressurePlate(PressurePlateBlock.Type.WOOD, FabricBlockSettings.of(Material.CLAY).friction(0.8F).sounds(BlockSoundGroup.SLIME).hardness(.3f).build());
+    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.Type type, Material material, float hardness, BlockSoundGroup group, PressurePlateTask task)
+    {
+        return new CustomPressurePlateBlock(type, FabricBlockSettings.of(material).hardness(hardness).sounds(group).build(), task);
+    }
+
+    private static CustomPressurePlateBlock createInvisiblePressurePlate(CustomPressurePlateBlock block)
+    {
+        return new CustomInvisiblePressurePlateBlock(block);
+    }
 
     public static void register()
     {
