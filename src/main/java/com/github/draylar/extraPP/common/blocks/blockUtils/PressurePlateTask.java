@@ -1,4 +1,4 @@
-package com.github.draylar.extraPP.common;
+package com.github.draylar.extraPP.common.blocks.blockUtils;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;

@@ -1,6 +1,8 @@
 package com.github.draylar.extraPP.common;
 
 import com.github.draylar.extraPP.common.blocks.CustomInvisiblePressurePlateBlock;
+import com.github.draylar.extraPP.common.blocks.CustomPressurePlateBlock;
+import com.github.draylar.extraPP.common.blocks.blockUtils.PressurePlateTask;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Material;
 import net.minecraft.block.PressurePlateBlock;

@@ -1,10 +1,9 @@
-package com.github.draylar.extraPP.common;
+package com.github.draylar.extraPP.common.blocks;
 
+import com.github.draylar.extraPP.common.blocks.blockUtils.PressurePlateTask;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 

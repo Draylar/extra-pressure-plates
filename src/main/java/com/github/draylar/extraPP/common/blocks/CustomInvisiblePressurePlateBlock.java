@@ -1,6 +1,5 @@
 package com.github.draylar.extraPP.common.blocks;
 
-import com.github.draylar.extraPP.common.CustomPressurePlateBlock;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 
