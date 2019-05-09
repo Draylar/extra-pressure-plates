@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "result": {
+    "item": "extra-pressure-plates:ocean_pressure_plate"
+  }
+}

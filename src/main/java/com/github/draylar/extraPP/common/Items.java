@@ -17,6 +17,8 @@ public class Items
     private static final BlockItem GLASS = new BlockItem(Blocks.GLASS, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
     private static final BlockItem SLIME = new BlockItem(Blocks.SLIME, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
     private static final BlockItem INVISIBLE_SLIME = new BlockItem(Blocks.INVISIBLE_SLIME, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
+    private static final BlockItem OCEAN = new BlockItem(Blocks.OCEAN, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
+    private static final BlockItem INVISIBLE_OCEAN = new BlockItem(Blocks.INVISIBLE_OCEAN, new Item.Settings().itemGroup(ItemGroup.REDSTONE));
 
     public static void register()
     {
@@ -29,6 +31,8 @@ public class Items
         register("glass_pressure_plate", GLASS);
         register("slime_pressure_plate", SLIME);
         register("invisible_slime_pressure_plate", INVISIBLE_SLIME);
+        register("ocean_pressure_plate", OCEAN);
+        register("invisible_ocean_pressure_plate", INVISIBLE_OCEAN);
     }
 
     private static void register(String name, Item item)
