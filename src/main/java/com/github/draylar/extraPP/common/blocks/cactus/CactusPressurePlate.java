@@ -5,6 +5,7 @@ import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.VerticalEntityPosition;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -27,7 +28,7 @@ public class CactusPressurePlate extends PressurePlateBlock
             if (redstoneOutput == 0)
             {
                 this.updatePlateState(world_1, blockPos_1, blockState_1, redstoneOutput);
-                entity_1.damage(DamageSource.CACTUS, 4);
+                if(entity_1 instanceof HostileEntity) entity_1.damage(DamageSource.CACTUS, 4);
             }
         }
     }
