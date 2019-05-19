@@ -2,7 +2,7 @@
 {
   "schemaVersion": 1,
   "id": "extra-pressure-plates",
-  "version": "1.1.0",
+  "version": "1.1.1",
 
   "name": "Extra Pressure Plates",
   "description": "Adds more pressure plates to the game!",

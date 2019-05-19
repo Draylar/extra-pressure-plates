@@ -1,5 +1,6 @@
 package com.github.draylar.extraPP.common.blocks;
 
+import com.github.draylar.extraPP.common.blocks.blockUtils.CollisionCheck;
 import com.github.draylar.extraPP.common.blocks.blockUtils.PressurePlateRenderType;
 import com.github.draylar.extraPP.common.blocks.blockUtils.PressurePlateTask;
 import net.fabricmc.api.EnvType;
@@ -13,20 +14,24 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
+import java.util.function.Consumer;
+
 public class CustomPressurePlateBlock extends PressurePlateBlock
 {
     final PressurePlateBlock.Type TYPE;
     final Settings SETTINGS;
     final PressurePlateTask TASK;
     final PressurePlateRenderType RENDER;
+    final CollisionCheck collisionCheck;
 
-    public CustomPressurePlateBlock(Type pressurePlateBlock$Type_1, Settings block$Settings_1, PressurePlateTask task, PressurePlateRenderType type)
+    public CustomPressurePlateBlock(Type pressurePlateBlock$Type_1, Settings block$Settings_1, PressurePlateTask task, PressurePlateRenderType type, CollisionCheck check)
     {
         super(pressurePlateBlock$Type_1, block$Settings_1);
         this.TYPE = pressurePlateBlock$Type_1;
         this.SETTINGS = block$Settings_1;
         this.TASK = task;
         this.RENDER = type;
+        this.collisionCheck = check;
     }
 
     @Override
@@ -34,11 +39,14 @@ public class CustomPressurePlateBlock extends PressurePlateBlock
     {
         if (!world_1.isClient)
         {
-            int redstoneOutput = this.getRedstoneOutput(blockState_1);
-            if (redstoneOutput == 0)
+            if(collisionCheck.canCollide(entity_1))
             {
-                this.updatePlateState(world_1, blockPos_1, blockState_1, redstoneOutput);
-                if(TASK != null) TASK.run(blockState_1, world_1, blockPos_1, entity_1);
+                int redstoneOutput = this.getRedstoneOutput(blockState_1);
+                if (redstoneOutput == 0)
+                {
+                    this.updatePlateState(world_1, blockPos_1, blockState_1, redstoneOutput);
+                    if (TASK != null) TASK.run(blockState_1, world_1, blockPos_1, entity_1);
+                }
             }
         }
     }
