@@ -18,13 +18,13 @@ import java.util.function.Consumer;
 
 public class CustomPressurePlateBlock extends PressurePlateBlock
 {
-    final PressurePlateBlock.Type TYPE;
+    final PressurePlateBlock.ActivationRule TYPE;
     final Settings SETTINGS;
     final PressurePlateTask TASK;
     final PressurePlateRenderType RENDER;
     final CollisionCheck collisionCheck;
 
-    public CustomPressurePlateBlock(Type pressurePlateBlock$Type_1, Settings block$Settings_1, PressurePlateTask task, PressurePlateRenderType type, CollisionCheck check)
+    public CustomPressurePlateBlock(ActivationRule pressurePlateBlock$Type_1, Settings block$Settings_1, PressurePlateTask task, PressurePlateRenderType type, CollisionCheck check)
     {
         super(pressurePlateBlock$Type_1, block$Settings_1);
         this.TYPE = pressurePlateBlock$Type_1;
@@ -51,11 +51,13 @@ public class CustomPressurePlateBlock extends PressurePlateBlock
         }
     }
 
+
+
     @Environment(EnvType.CLIENT)
-    public boolean skipRenderingSide(BlockState blockState_1, BlockState blockState_2, Direction direction_1) {
+    public boolean isSideInvisible(BlockState blockState_1, BlockState blockState_2, Direction direction_1) {
         if(RENDER == PressurePlateRenderType.GLASS)
         {
-            return blockState_2.getBlock() == this || super.skipRenderingSide(blockState_1, blockState_2, direction_1);
+            return blockState_2.getBlock() == this || super.isSideInvisible(blockState_1, blockState_2, direction_1);
         }
 
         return false;

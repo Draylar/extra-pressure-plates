@@ -21,19 +21,19 @@ import net.minecraft.util.registry.Registry;
 
 public class Blocks
 {
-    static final CustomPressurePlateBlock OBSIDIAN = createPressurePlate(PressurePlateBlock.Type.STONE, Material.STONE, 1, null, PressurePlateRenderType.DEFAULT, t -> t instanceof PlayerEntity);
-    static final CustomPressurePlateBlock GLASS = createPressurePlate(PressurePlateBlock.Type.WOOD, Material.GLASS, .5f, null, PressurePlateRenderType.GLASS);
-    static final CustomPressurePlateBlock SLIME = createPressurePlate(PressurePlateBlock.Type.WOOD, Material.CLAY, .3f, BlockSoundGroup.SLIME, null, PressurePlateRenderType.SLIME);
-    static final CustomPressurePlateBlock CACTUS = createPressurePlate(PressurePlateBlock.Type.WOOD, Material.CACTUS, .5f, (state, world, pos, entity) ->
+    static final CustomPressurePlateBlock OBSIDIAN = createPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, Material.STONE, 1, null, PressurePlateRenderType.DEFAULT, t -> t instanceof PlayerEntity);
+    static final CustomPressurePlateBlock GLASS = createPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, Material.GLASS, .5f, null, PressurePlateRenderType.GLASS);
+    static final CustomPressurePlateBlock SLIME = createPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, Material.CLAY, .3f, BlockSoundGroup.SLIME, null, PressurePlateRenderType.SLIME);
+    static final CustomPressurePlateBlock CACTUS = createPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, Material.CACTUS, .5f, (state, world, pos, entity) ->
     {
         if(entity instanceof HostileEntity) entity.damage(DamageSource.CACTUS, 4);
     }, PressurePlateRenderType.DEFAULT);
 
-    static final CustomPressurePlateBlock FIERY = createPressurePlate(PressurePlateBlock.Type.STONE, Material.STONE, 1, (state, world, pos, entity) ->
+    static final CustomPressurePlateBlock FIERY = createPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, Material.STONE, 1, (state, world, pos, entity) ->
     {
         if(entity instanceof HostileEntity) entity.setOnFireFor(5);
     }, PressurePlateRenderType.DEFAULT);
-    static final CustomPressurePlateBlock OCEAN = createPressurePlate(PressurePlateBlock.Type.STONE, Material.STONE, .7f, (state, world, pos, entity) ->
+    static final CustomPressurePlateBlock OCEAN = createPressurePlate(PressurePlateBlock.ActivationRule.EVERYTHING, Material.STONE, .7f, (state, world, pos, entity) ->
     {
         if(entity instanceof LivingEntity)
         {
@@ -48,17 +48,17 @@ public class Blocks
     static final CustomPressurePlateBlock INVISIBLE_SLIME = createInvisiblePressurePlate(SLIME);
     static final CustomPressurePlateBlock INVISIBLE_OCEAN = createInvisiblePressurePlate(OCEAN);
 
-    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.Type type, Material material, float hardness, PressurePlateTask task, PressurePlateRenderType renderType)
+    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.ActivationRule type, Material material, float hardness, PressurePlateTask task, PressurePlateRenderType renderType)
     {
         return new CustomPressurePlateBlock(type, FabricBlockSettings.of(material).hardness(hardness).build(), task, renderType, null);
     }
 
-    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.Type type, Material material, float hardness, BlockSoundGroup group, PressurePlateTask task, PressurePlateRenderType renderType)
+    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.ActivationRule type, Material material, float hardness, BlockSoundGroup group, PressurePlateTask task, PressurePlateRenderType renderType)
     {
         return new CustomPressurePlateBlock(type, FabricBlockSettings.of(material).hardness(hardness).sounds(group).build(), task, renderType, null);
     }
 
-    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.Type type, Material material, float hardness, PressurePlateTask task, PressurePlateRenderType renderType, CollisionCheck check)
+    private static CustomPressurePlateBlock createPressurePlate(PressurePlateBlock.ActivationRule type, Material material, float hardness, PressurePlateTask task, PressurePlateRenderType renderType, CollisionCheck check)
     {
         return new CustomPressurePlateBlock(type, FabricBlockSettings.of(material).hardness(hardness).build(), task, renderType, check);
     }

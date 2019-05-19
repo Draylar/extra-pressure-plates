@@ -7,7 +7,7 @@ public class CustomInvisiblePressurePlateBlock extends CustomPressurePlateBlock
 {
     public CustomInvisiblePressurePlateBlock(CustomPressurePlateBlock block)
     {
-        super(block.TYPE, block.SETTINGS, block.TASK, block.RENDER);
+        super(block.TYPE, block.SETTINGS, block.TASK, block.RENDER, block.collisionCheck);
     }
 
     @Override
