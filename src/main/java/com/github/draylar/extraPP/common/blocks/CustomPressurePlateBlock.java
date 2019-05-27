@@ -31,7 +31,16 @@ public class CustomPressurePlateBlock extends PressurePlateBlock
         this.SETTINGS = block$Settings_1;
         this.TASK = task;
         this.RENDER = type;
-        this.collisionCheck = check;
+
+        if(check == null)
+        {
+            collisionCheck = entity -> true;
+        }
+
+        else
+        {
+            collisionCheck = check;
+        }
     }
 
     @Override
