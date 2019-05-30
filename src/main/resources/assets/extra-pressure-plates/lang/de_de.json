@@ -1,0 +1,15 @@
+{
+  "block.extra-pressure-plates.invisible_obsidian_pressure_plate": "Unsichtbare Obsidiandruckplatte",
+  "block.extra-pressure-plates.obsidian_pressure_plate": "Obsidiandruckplatte",
+  "block.extra-pressure-plates.invisible_fiery_pressure_plate": "Unsichtbare Feurigedruckplatte",
+  "block.extra-pressure-plates.fiery_pressure_plate": "Feurigedruckplatte",
+  "block.extra-pressure-plates.invisible_cactus_pressure_plate": "Unsichtbare Kaktusdruckplatte",
+  "block.extra-pressure-plates.cactus_pressure_plate": "Kaktusdruckplatte",
+  "block.extra-pressure-plates.glass_pressure_plate": "Glassdruckplatte",
+  "block.extra-pressure-plates.slime_pressure_plate": "Schleimdruckplatte",
+  "block.extra-pressure-plates.invisible_slime_pressure_plate": "Unsichtbare Schleimdruckplatte",
+  "block.extra-pressure-plates.ocean_pressure_plate": "Seedruckplatte",
+  "block.extra-pressure-plates.invisible_ocean_pressure_plate": "Unsichtbare Seedruckplatte",
+  "extra-pressure-plates.advancements.story.create_pressure_plate.title": "Bleib weg!",
+  "extra-pressure-plates.advancements.story.create_pressure_plate.description": "Stelle eine Obsidian-Druckplatte her, um Mobs von deinem Zuhause fernzuhalten."
+}
