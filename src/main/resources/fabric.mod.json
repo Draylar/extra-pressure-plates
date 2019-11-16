@@ -2,7 +2,7 @@
 {
   "schemaVersion": 1,
   "id": "extra-pressure-plates",
-  "version": "1.1.2",
+  "version": "${version}",
 
   "name": "Extra Pressure Plates",
   "description": "Adds more pressure plates to the game!",
@@ -10,8 +10,8 @@
     "Draylar"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/extra-pressure-plates",
+    "sources": "https://github.com/Draylar/extra-pressure-plates"
   },
 
   "license": "GPLv3",
@@ -20,12 +20,12 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.draylar.extraPP.ExtraPressurePlates"
+      "com.github.draylar.extrapp.ExtraPressurePlates"
+    ],
+    "client": [
+      "com.github.draylar.extrapp.ExtraPressurePlatesClient"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
   "requires": {
     "fabricloader": ">=0.4.0",
